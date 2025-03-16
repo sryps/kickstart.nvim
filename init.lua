@@ -1,11 +1,14 @@
 -- Custom Keymaps --
 vim.o.wrap = false
 
+vim.mapleader = ' '
+vim.maplocalleader = ' '
+
 vim.keymap.set('n', 'J', 'b', { silent = true })
 vim.keymap.set('n', 'K', 'e', { silent = true })
 vim.keymap.set('n', 'H', '<Home>', { silent = true })
 vim.keymap.set('n', 'L', '<End>', { silent = true })
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 10
 
 --[[
 
@@ -96,10 +99,7 @@ P.S. You can delete this when you're done too. It's your config now! :)
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
 
--- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = false
 
 -- [[ Setting options ]]
