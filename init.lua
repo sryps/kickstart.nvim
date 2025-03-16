@@ -93,6 +93,14 @@ vim.g.maplocalleader = ' '
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = false
 
+vim.o.wrap = false
+
+vim.keymap.set('n', 'J', 'b', { silent = true })
+vim.keymap.set('n', 'K', 'e', { silent = true })
+vim.keymap.set('n', 'H', '<Home>', { silent = true })
+vim.keymap.set('n', 'L', '<End>', { silent = true })
+vim.opt.scrolloff = 8
+
 -- [[ Setting options ]]
 -- See `:help vim.opt`
 -- NOTE: You can change these options as you wish!
