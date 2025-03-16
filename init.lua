@@ -241,6 +241,19 @@ vim.opt.rtp:prepend(lazypath)
 --
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
+  {
+    'github/copilot.vim',
+    lazy = false,
+    config = function()
+      vim.g.copilot_enabled = true
+      vim.api.nvim_create_autocmd('VimEnter', {
+        callback = function()
+          vim.cmd 'Copilot enable'
+        end,
+      })
+    end,
+  },
+
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
