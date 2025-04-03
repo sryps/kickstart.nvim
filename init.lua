@@ -4,14 +4,17 @@ vim.o.wrap = false
 vim.mapleader = ' '
 vim.maplocalleader = ' '
 
+vim.g.mapleader = ' ' -- Set leader key to space
+
+vim.keymap.set('n', 'F', '}', { silent = true }) -- Move down paragraph
+vim.keymap.set('n', 'D', '{', { silent = true }) -- Move up paragraph
+
 vim.keymap.set('n', 'J', 'b', { silent = true })
 vim.keymap.set('n', 'K', 'e', { silent = true })
 vim.keymap.set('n', 'H', '<Home>', { silent = true })
 vim.keymap.set('n', 'L', '<End>', { silent = true })
-vim.keymap.set('n', '<C-J>', '{', { silent = true })
-vim.keymap.set('n', '<C-K>', '}', { silent = true })
-vim.keymap.set('n', 'j', 'k', { silent = true })
-vim.keymap.set('n', 'k', 'j', { silent = true })
+
+vim.keymap.set('i', 'jj', '<Esc>', { silent = true })
 
 vim.opt.scrolloff = 10
 
