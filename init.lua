@@ -8,7 +8,22 @@ vim.keymap.set('n', 'J', 'b', { silent = true })
 vim.keymap.set('n', 'K', 'e', { silent = true })
 vim.keymap.set('n', 'H', '<Home>', { silent = true })
 vim.keymap.set('n', 'L', '<End>', { silent = true })
+vim.keymap.set('n', '<C-J>', '{', { silent = true })
+vim.keymap.set('n', '<C-K>', '}', { silent = true })
+vim.keymap.set('n', 'j', 'k', { silent = true })
+vim.keymap.set('n', 'k', 'j', { silent = true })
+
 vim.opt.scrolloff = 10
+
+-- Auto-format .nomad files on save using "nomad fmt"
+vim.api.nvim_create_autocmd('BufWritePost', {
+  pattern = '*.nomad',
+  callback = function()
+    local filepath = vim.fn.expand '%:p' -- Get the absolute file path
+    vim.cmd('silent! !nomad fmt ' .. filepath)
+    vim.cmd 'edit!' -- Reload buffer to reflect changes
+  end,
+})
 
 --[[
 
