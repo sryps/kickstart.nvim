@@ -4,8 +4,6 @@ vim.o.wrap = false
 vim.mapleader = ' '
 vim.maplocalleader = ' '
 
-vim.g.mapleader = ' ' -- Set leader key to space
-
 vim.keymap.set('n', 'F', '}', { silent = true }) -- Move down paragraph
 vim.keymap.set('n', 'D', '{', { silent = true }) -- Move up paragraph
 
