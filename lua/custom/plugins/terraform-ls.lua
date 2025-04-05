@@ -16,10 +16,6 @@ return {
     'neovim/nvim-lspconfig',
     dependencies = { 'williamboman/mason-lspconfig.nvim' },
     config = function()
-      require('mason').setup()
-      require('mason-lspconfig').setup {
-        ensure_installed = { 'terraform-ls' },
-      }
 
       -- Configure terraform-ls for .nomad and .hcl files
       require('lspconfig').terraformls.setup {

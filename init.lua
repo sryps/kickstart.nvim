@@ -16,6 +16,9 @@ vim.keymap.set('i', 'jj', '<Esc>', { silent = true })
 
 vim.opt.scrolloff = 10
 
+vim.opt.tabstop = 4 -- Number of visual spaces per tab
+vim.opt.shiftwidth = 4 -- Number of spaces to use for autoindent
+
 -- Auto-format .nomad files on save using "nomad fmt"
 vim.api.nvim_create_autocmd('BufWritePost', {
   pattern = '*.nomad',
