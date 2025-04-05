@@ -14,6 +14,9 @@ vim.keymap.set('n', 'L', '<End>', { silent = true })
 
 vim.keymap.set('i', 'jj', '<Esc>', { silent = true })
 
+vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', { desc = 'Move line down', silent = true })
+vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', { desc = 'Move line up', silent = true })
+
 vim.opt.scrolloff = 10
 
 vim.opt.tabstop = 4 -- Number of visual spaces per tab
