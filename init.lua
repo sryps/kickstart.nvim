@@ -17,7 +17,10 @@ vim.keymap.set('i', 'jj', '<Esc>', { silent = true })
 vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', { desc = 'Move line down', silent = true })
 vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', { desc = 'Move line up', silent = true })
 
+vim.keymap.set('n', 'lf', '<C-^>', { silent = true }) -- Move to last accessed file
+
 vim.opt.scrolloff = 10
+vim.opt.sidescrolloff = 10
 
 vim.opt.tabstop = 4 -- Number of visual spaces per tab
 vim.opt.shiftwidth = 4 -- Number of spaces to use for autoindent
