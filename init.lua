@@ -14,8 +14,10 @@ vim.keymap.set('n', 'L', '<End>', { silent = true })
 
 vim.keymap.set('i', 'jj', '<Esc>', { silent = true })
 
-vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', { desc = 'Move line down', silent = true })
-vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', { desc = 'Move line up', silent = true })
+vim.keymap.set('n', '<C-Left>', ':m .+1<CR>==', { desc = 'Move line down (kinesis)', silent = true })
+vim.keymap.set('n', '<C-Right>', ':m .-2<CR>==', { desc = 'Move line up (kineses)', silent = true })
+vim.keymap.set('n', '<C-j>', ':m .+1<CR>==', { desc = 'Move line down', silent = true })
+vim.keymap.set('n', '<C-k>', ':m .-2<CR>==', { desc = 'Move line up', silent = true })
 
 vim.keymap.set('n', 'lf', '<C-^>', { silent = true }) -- Move to last accessed file
 
