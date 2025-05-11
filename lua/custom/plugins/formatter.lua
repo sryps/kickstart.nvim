@@ -20,7 +20,7 @@ return {
         lua = { 'stylua' },
         python = { 'isort', 'black' },
         hcl = { 'hclfmt' },
-        go = { 'gofmtp' },
+        go = { 'goimports' },
       },
       format_on_save = {
         lsp_fallback = true,
