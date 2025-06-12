@@ -1,8 +1,15 @@
+-- Map filetypes to LSP
+vim.filetype.add {
+  extension = {
+    nomad = 'terraform',
+  },
+}
+
 -- Custom Keymaps --
 vim.o.wrap = false
 
-vim.mapleader = ' '
-vim.maplocalleader = ' '
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 vim.keymap.set('n', 'F', '}', { silent = true }) -- Move down paragraph
 vim.keymap.set('n', 'D', '{', { silent = true }) -- Move up paragraph
@@ -16,10 +23,8 @@ vim.keymap.set('i', 'jj', '<Esc>', { silent = true })
 
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', { silent = true })
 
-vim.keymap.set('n', '<C-Left>', ':m .+1<CR>==', { desc = 'Move line down (kinesis)', silent = true })
-vim.keymap.set('n', '<C-Right>', ':m .-2<CR>==', { desc = 'Move line up (kineses)', silent = true })
-vim.keymap.set('n', '<C-j>', ':m .+1<CR>==', { desc = 'Move line down', silent = true })
-vim.keymap.set('n', '<C-k>', ':m .-2<CR>==', { desc = 'Move line up', silent = true })
+vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', { desc = 'Move line down', silent = true })
+vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', { desc = 'Move line up', silent = true })
 
 vim.keymap.set('n', 'lf', '<C-^>', { silent = true }) -- Move to last accessed file
 
@@ -657,7 +662,7 @@ require('lazy').setup({
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         -- clangd = {},
-        -- gopls = {},
+        gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs

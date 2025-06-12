@@ -21,6 +21,7 @@ return {
         python = { 'isort', 'black' },
         hcl = { 'hclfmt' },
         go = { 'goimports' },
+        nomad = { 'hclfmt' },
       },
       format_on_save = {
         lsp_fallback = true,
