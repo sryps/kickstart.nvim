@@ -27,6 +27,7 @@ vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', { desc = 'Move line down', silent =
 vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', { desc = 'Move line up', silent = true })
 
 vim.keymap.set('n', 'lf', '<C-^>', { silent = true }) -- Move to last accessed file
+vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle Neo-tree' })
 
 vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 10
