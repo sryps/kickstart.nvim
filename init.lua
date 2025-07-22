@@ -334,6 +334,32 @@ require('lazy').setup({
       require('mini.icons').setup() -- explicitly initialize mini icons
     end,
   },
+  {
+    'gaoDean/autolist.nvim',
+    ft = { 'markdown', 'text', 'norg' },
+    config = function()
+      require('autolist').setup()
+
+      local map = vim.keymap.set
+
+      -- Continue bullet/checkbox on Enter in insert mode
+      map('i', '<CR>', '<CR><Cmd>AutolistNewBullet<CR>')
+
+      -- Normal mode mappings
+      map('n', 'o', 'o<Cmd>AutolistNewBullet<CR>', { remap = true })
+      map('n', 'O', 'O<Cmd>AutolistNewBulletBefore<CR>', { remap = true })
+      map('n', '<CR>', '<Cmd>AutolistToggleCheckbox<CR>', { remap = true }) -- toggle [ ] ↔ [x]
+      map('n', '<C-r>', '<Cmd>AutolistRecalculate<CR>', { remap = true })
+
+      -- Automatically recalculate list when editing
+      vim.api.nvim_create_autocmd('TextChanged', {
+        pattern = '*',
+        callback = function()
+          vim.cmd 'AutolistRecalculate'
+        end,
+      })
+    end,
+  },
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
